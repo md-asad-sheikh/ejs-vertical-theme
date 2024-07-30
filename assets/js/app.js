@@ -25,10 +25,12 @@ $(function () {
       $(".wrapper").hasClass("toggled")
         ? ($(".wrapper").removeClass("toggled"),
           $(".sidebar-wrapper").unbind("hover"),
+          $(".toggle-icon").find(".lni").removeAttr("title").attr("title", "Click for collapse/toggled"),
           $(".toggle-icon").find(".lni").addClass("lni-angle-double-left"),
           $(".toggle-icon").find(".lni").removeClass("lni-angle-double-right"))
         : ($(".toggle-icon").find(".lni").removeClass("lni-angle-double-left"),
           $(".toggle-icon").find(".lni").addClass("lni-angle-double-right"),
+          $(".toggle-icon").find(".lni").removeAttr("title").attr("title", "Click for expand/untoggled"),
           $(".wrapper").addClass("toggled"),
           $(".sidebar-wrapper").hover(
             function () {
