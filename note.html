@@ -1,0 +1,22 @@
+.page-wrapper { margin-top: 50px; // 60 to 50 } 
+.chat-wrapper { height: 580px; // 600 to 580 }
+.chat-list { height: 280px; // 300 to 280 }
+// In app.js
+$(".toggle-icon").click(function () {
+    $(".wrapper").hasClass("toggled")
+      ? ($(".wrapper").removeClass("toggled"),
+        $(".sidebar-wrapper").unbind("hover"),
+        $(".toggle-icon").find(".lni").addClass("lni-angle-double-left"),
+        $(".toggle-icon").find(".lni").removeClass("lni-angle-double-right"))
+      : ($(".toggle-icon").find(".lni").removeClass("lni-angle-double-left"),
+        $(".toggle-icon").find(".lni").addClass("lni-angle-double-right"),
+        $(".wrapper").addClass("toggled"),
+        $(".sidebar-wrapper").hover(
+          function () {
+            $(".wrapper").addClass("sidebar-hovered");
+          },
+          function () {
+            $(".wrapper").removeClass("sidebar-hovered");
+          }
+        ));
+  }),
